@@ -14,9 +14,9 @@ FILES :=                              \
     TestCollatz.c++                   \
     TestCollatz.out
 
-CXX        := g++-4.8
+CXX        := g++
 CXXFLAGS   := -pedantic -std=c++11 -Wall
-LDFLAGS    := -lgtest -lgtest_main -pthread
+LDFLAGS    := -lgtest -lgtest_main -lpthread
 GCOV       := gcov-4.8
 GCOVFLAGS  := -fprofile-arcs -ftest-coverage
 VALGRIND   := valgrind
