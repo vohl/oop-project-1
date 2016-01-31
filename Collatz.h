@@ -17,6 +17,16 @@
 
 using namespace std;
 
+//-------------
+// cycle_length
+//-------------
+
+/**
+* n is positive integer
+* return the calculated cycle length for n
+*/
+int cycle_length (int n);
+
 // ------------
 // collatz_read
 // ------------
