@@ -14,7 +14,7 @@ FILES :=                              \
     TestCollatz.c++                   \
     TestCollatz.out
 
-CXX        := g++
+CXX        := g++-4.8
 CXXFLAGS   := -pedantic -std=c++11 -Wall
 LDFLAGS    := -lgtest -lgtest_main -lpthread
 GCOV       := gcov-4.8
