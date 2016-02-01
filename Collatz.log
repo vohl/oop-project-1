@@ -1,0 +1,47 @@
+commit 60285be0c0c234eea7f40a0c7f1f1c61a2116d8b
+Author: vohl <acvohl@gmail.com>
+Date:   Sun Jan 31 16:07:39 2016 -0600
+
+    testing with travis
+
+commit 0fb99b7048d7e5a65d40aeb8a43c5bb150d6a661
+Author: vohl <acvohl@gmail.com>
+Date:   Sun Jan 31 13:48:17 2016 -0600
+
+    Close #6, Close #7, and Close #8
+
+commit 2d952e7c83e0e070747311f81380818fd8538146
+Author: vohl <acvohl@gmail.com>
+Date:   Sun Jan 31 13:00:04 2016 -0600
+
+    1
+
+commit 7b1392d610fc49f7d583b046ba5d996f4326b7e3
+Author: vohl <acvohl@gmail.com>
+Date:   Sun Jan 31 12:55:32 2016 -0600
+
+    just trying to pass travis
+
+commit 1d59226a944ed31246157b88790c046b11f73997
+Author: vohl <acvohl@gmail.com>
+Date:   Sun Jan 31 12:30:38 2016 -0600
+
+    added content to files inside collatz-tests
+
+commit b502e4b92bf546c020e81a5f24057b6c76df001c
+Author: vohl <acvohl@gmail.com>
+Date:   Sun Jan 31 12:22:52 2016 -0600
+
+    Close #1, Close #2, Close #3, Close #4, Close #5, and Close #9
+
+commit 91ba055d6713aad1cadaf8a55f5602742197a4a0
+Author: vohl <acvohl@gmail.com>
+Date:   Sat Jan 30 22:25:43 2016 -0600
+
+    Created a dev branch
+
+commit db8e64e5e67f890b71197a920896633925ed380b
+Author: vohl <acvohl@gmail.com>
+Date:   Mon Jan 25 22:31:01 2016 -0600
+
+    First commit for the Collatz project

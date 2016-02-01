@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,6 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a697abe0e7d6fd56c3b8971fd73e6624d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_collatz_8h.html#a697abe0e7d6fd56c3b8971fd73e6624d">cycle_length</a> (int n)</td></tr>
+<tr class="separator:a697abe0e7d6fd56c3b8971fd73e6624d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2772f8a734aeab48332eb3b282f991ba"><td class="memItemLeft" align="right" valign="top">pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_collatz_8h.html#a2772f8a734aeab48332eb3b282f991ba">collatz_read</a> (const string &amp;s)</td></tr>
 <tr class="separator:a2772f8a734aeab48332eb3b282f991ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b0d3827a619c18aa4d96b8ee8b1c47d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_collatz_8h.html#a0b0d3827a619c18aa4d96b8ee8b1c47d">collatz_eval</a> (int i, int j)</td></tr>
@@ -239,10 +241,27 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a697abe0e7d6fd56c3b8971fd73e6624d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cycle_length </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>n is positive integer return the calculated cycle length for n </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 31 2016 12:04:56 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 31 2016 20:05:35 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
