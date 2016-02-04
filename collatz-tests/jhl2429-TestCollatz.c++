@@ -25,10 +25,6 @@ using namespace std;
 // TestCollatz
 // -----------
 
-TEST(CollatzFixture, c_length) {
-    const int v = cycle_length(5);
-    ASSERT_EQ(6, v);}
-
 // ----
 // read
 // ----
@@ -36,32 +32,32 @@ TEST(CollatzFixture, c_length) {
 TEST(CollatzFixture, read) {
     string s("1 10\n");
     const pair<int, int> p = collatz_read(s);
-    ASSERT_EQ( 1, p.first);
+    ASSERT_EQ(1, p.first);
     ASSERT_EQ(10, p.second);}
 
-TEST(CollatzFixture, zeros) {
-    string s("0 0\n");
-    const pair<int, int> p = collatz_read(s);
-    ASSERT_EQ( 0, p.first);
-    ASSERT_EQ(0, p.second);}
+//additional tests
 
-TEST(CollatzFixture, read_backwards) {
+TEST(CollatzFixture, read_reverse) {
     string s("10 1\n");
     const pair<int, int> p = collatz_read(s);
-    ASSERT_EQ( 10, p.first);
+    ASSERT_EQ(10, p.first);
     ASSERT_EQ(1, p.second);}
+
+TEST(CollatzFixture, read_same) {
+    string s("1 1\n");
+    const pair<int, int> p = collatz_read(s);
+    ASSERT_EQ(1, p.first);
+    ASSERT_EQ(1, p.second);}
+
+TEST(CollatzFixture, read_large) {
+    string s("999998 999999\n");
+    const pair<int, int> p = collatz_read(s);
+    ASSERT_EQ(999998, p.first);
+    ASSERT_EQ(999999, p.second);}
 
 // ----
 // eval
 // ----
-
-TEST(CollatzFixture, eval_zero_range) {
-    const int v = collatz_eval(5, 5);
-    ASSERT_EQ(6, v);}
-
-TEST(CollatzFixture, eval_cache_for_3) {
-    const int v = collatz_eval(3, 3);
-    ASSERT_EQ(8, v);}
 
 TEST(CollatzFixture, eval_1) {
     const int v = collatz_eval(1, 10);
@@ -79,9 +75,19 @@ TEST(CollatzFixture, eval_4) {
     const int v = collatz_eval(900, 1000);
     ASSERT_EQ(174, v);}
 
-TEST(CollatzFixture, eval_1_backward) {
-    const int v = collatz_eval(10, 1);
-    ASSERT_EQ(20, v);}
+// additional tests
+
+TEST(CollatzFixture, eval_reverse) {
+    const int v = collatz_eval(1000, 900);
+    ASSERT_EQ(174, v);}
+
+TEST(CollatzFixture, eval_same) {
+    const int v = collatz_eval(1, 1);
+    ASSERT_EQ(1, v);}
+
+TEST(CollatzFixture, eval_large) {
+    const int v = collatz_eval(999998, 999999);
+    ASSERT_EQ(259, v);}
 
 // -----
 // print
@@ -92,38 +98,58 @@ TEST(CollatzFixture, print) {
     collatz_print(w, 1, 10, 20);
     ASSERT_EQ("1 10 20\n", w.str());}
 
-TEST(CollatzFixture, print_zeros) {
-    ostringstream w;
-    collatz_print(w, 0, 0, 0);
-    ASSERT_EQ("0 0 0\n", w.str());}
+// additional tests
 
+TEST(CollatzFixture, print_reverse) {
+    ostringstream w;
+    collatz_print(w, 10, 1, 20);
+    ASSERT_EQ("10 1 20\n", w.str());}
+
+TEST(CollatzFixture, print_same) {
+    ostringstream w;
+    collatz_print(w, 1, 1, 1);
+    ASSERT_EQ("1 1 1\n", w.str());}
+
+TEST(CollatzFixture, print_large) {
+    ostringstream w;
+    collatz_print(w, 999998, 999999, 259);
+    ASSERT_EQ("999998 999999 259\n", w.str());}
 // -----
 // solve
 // -----
 
-TEST(CollatzFixture, solve_all_ones) {
-    istringstream r("5 5\n3 3\n1 1\n");
-    ostringstream w;
-    collatz_solve(r, w);
-    ASSERT_EQ("5 5 6\n3 3 8\n1 1 1\n", w.str());}
-
 TEST(CollatzFixture, solve) {
-    istringstream r("1 10\n1 10\n100 200\n201 210\n900 1000\n");
+    istringstream r("1 10\n100 200\n201 210\n900 1000\n");
     ostringstream w;
     collatz_solve(r, w);
-    ASSERT_EQ("1 10 20\n1 10 20\n100 200 125\n201 210 89\n900 1000 174\n", w.str());}
+    ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n", w.str());}
 
-TEST(CollatzFixture, solve_backwards) {
+//additional tests
+
+TEST(CollatzFixture, solve_reverse) {
     istringstream r("10 1\n200 100\n210 201\n1000 900\n");
     ostringstream w;
     collatz_solve(r, w);
     ASSERT_EQ("10 1 20\n200 100 125\n210 201 89\n1000 900 174\n", w.str());}
 
-TEST(CollatzFixture, solve_large_gap) {
-    istringstream r("162 1000\n162 5000\n");
+TEST(CollatzFixture, solve_same) {
+    istringstream r("1 1\n");
     ostringstream w;
     collatz_solve(r, w);
-    ASSERT_EQ("162 1000 179\n162 5000 238\n", w.str());}
+    ASSERT_EQ("1 1 1\n", w.str());}
+
+TEST(CollatzFixture, solve_all_same) {
+    istringstream r("1 10\n1 10\n1 10\n1 10\n");
+    ostringstream w;
+    collatz_solve(r, w);
+    ASSERT_EQ("1 10 20\n1 10 20\n1 10 20\n1 10 20\n", w.str());}
+
+TEST(CollatzFixture, solve_large) {
+    istringstream r("999998 999999\n");
+    ostringstream w;
+    collatz_solve(r, w);
+    ASSERT_EQ("999998 999999 259\n", w.str());}
+
 
 /*
 % g++ -fprofile-arcs -ftest-coverage -pedantic -std=c++11 -Wall Collatz.c++ TestCollatz.c++ -o TestCollatz -lgtest -lgtest_main -lpthread
