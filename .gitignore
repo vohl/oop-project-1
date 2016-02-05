@@ -1,6 +1,2 @@
-*.gcda
-*.gcno
-*.gcov
-*.tmp
 latex
 Doxyfile

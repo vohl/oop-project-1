@@ -1,0 +1,69 @@
+==32638== Memcheck, a memory error detector
+==32638== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==32638== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==32638== Command: ./TestCollatz
+==32638== 
+Running main() from gtest_main.cc
+[==========] Running 17 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 17 tests from CollatzFixture
+[ RUN      ] CollatzFixture.c_length
+[       OK ] CollatzFixture.c_length (9 ms)
+[ RUN      ] CollatzFixture.read
+[       OK ] CollatzFixture.read (12 ms)
+[ RUN      ] CollatzFixture.zeros
+[       OK ] CollatzFixture.zeros (4 ms)
+[ RUN      ] CollatzFixture.read_backwards
+[       OK ] CollatzFixture.read_backwards (2 ms)
+[ RUN      ] CollatzFixture.eval_zero_range
+[       OK ] CollatzFixture.eval_zero_range (2 ms)
+[ RUN      ] CollatzFixture.eval_cache_for_3
+[       OK ] CollatzFixture.eval_cache_for_3 (2 ms)
+[ RUN      ] CollatzFixture.eval_1
+[       OK ] CollatzFixture.eval_1 (3 ms)
+[ RUN      ] CollatzFixture.eval_2
+[       OK ] CollatzFixture.eval_2 (2 ms)
+[ RUN      ] CollatzFixture.eval_3
+[       OK ] CollatzFixture.eval_3 (2 ms)
+[ RUN      ] CollatzFixture.eval_4
+[       OK ] CollatzFixture.eval_4 (2 ms)
+[ RUN      ] CollatzFixture.eval_1_backward
+[       OK ] CollatzFixture.eval_1_backward (1 ms)
+[ RUN      ] CollatzFixture.print
+[       OK ] CollatzFixture.print (7 ms)
+[ RUN      ] CollatzFixture.print_zeros
+[       OK ] CollatzFixture.print_zeros (3 ms)
+[ RUN      ] CollatzFixture.solve_all_ones
+[       OK ] CollatzFixture.solve_all_ones (8 ms)
+[ RUN      ] CollatzFixture.solve
+[       OK ] CollatzFixture.solve (4 ms)
+[ RUN      ] CollatzFixture.solve_backwards
+[       OK ] CollatzFixture.solve_backwards (4 ms)
+[ RUN      ] CollatzFixture.solve_large_gap
+[       OK ] CollatzFixture.solve_large_gap (4 ms)
+[----------] 17 tests from CollatzFixture (76 ms total)
+
+[----------] Global test environment tear-down
+[==========] 17 tests from 1 test case ran. (106 ms total)
+[  PASSED  ] 17 tests.
+==32638== 
+==32638== HEAP SUMMARY:
+==32638==     in use at exit: 0 bytes in 0 blocks
+==32638==   total heap usage: 512 allocs, 512 frees, 75,588 bytes allocated
+==32638== 
+==32638== All heap blocks were freed -- no leaks are possible
+==32638== 
+==32638== For counts of detected and suppressed errors, rerun with: -v
+==32638== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'Collatz.c++'
+Lines executed:100.00% of 67
+Branches executed:100.00% of 68
+Taken at least once:69.12% of 68
+Calls executed:69.70% of 33
+Creating 'Collatz.c++.gcov'
+File 'TestCollatz.c++'
+Lines executed:100.00% of 67
+Branches executed:62.26% of 424
+Taken at least once:31.13% of 424
+Calls executed:54.69% of 501
+Creating 'TestCollatz.c++.gcov'
